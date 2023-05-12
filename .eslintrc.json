@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "ignorePatterns": ["**.config.ts", "**.json", "**.html"],
+    "extends": [
+        "plugin:react/recommended",
+        "standard-with-typescript"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": ["error", 4],
+        "jsx-quotes": ["error", "prefer-single"],
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-uses-react": 0,
+        "@typescript-eslint/triple-slash-reference": 0,
+        "@typescript-eslint/indent": ["error", 4]
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+    }
+}

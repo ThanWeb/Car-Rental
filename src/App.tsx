@@ -1,8 +1,20 @@
 import type { ReactElement } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import SearchPage from './pages/SearchPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const App = (): ReactElement => {
     return (
-        <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+        <div className='container'>
+            <main>
+                <Routes>
+                    <Route path='/' element={<LandingPage />} />
+                    <Route path='/search' element={<SearchPage />} />
+                    <Route path='*' element={<NotFoundPage />} />
+                </Routes>
+            </main>
+        </div>
     )
 }
 

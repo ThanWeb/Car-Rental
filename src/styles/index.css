@@ -73,6 +73,25 @@ li {
     background-color: #F1F3FF;
 }
 
+.search-filter {
+    height: 120px;
+    transform: translateY(-50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-filter select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.search-filter input:focus, .search-filter select:focus {
+    outline: none;
+}
+
+.search-result {
+    transform: translateY(-60px);
+}
+
 .search-result-item {    
     box-sizing: border-box;
     width: calc(33.33% - 16px);

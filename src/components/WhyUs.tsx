@@ -31,7 +31,7 @@ const WhyUs = (): ReactElement => {
     ]
 
     return (
-        <div>
+        <div id='why-us'>
             <div className='container mx-auto'>
                 <h2 className='font-bold text-2xl leading-9 mb-4'>Why Us?</h2>
                 <p className='text-sm mb-8 font-light'>Mengapa harus pilih Binar Car Rental?</p>

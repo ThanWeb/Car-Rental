@@ -39,24 +39,23 @@ const Testimonial = (): ReactElement => {
     }
 
     return (
-        <div>
-            <h2>Testimonial</h2>
-            <div>
+        <div id='testimonial' className='py-24'>
+            <h2 className='text-2xl leading-9 font-bold mb-4 text-center'>Testimonial</h2>
+            <p className='font-light text-sm mb-10 text-center'>Berbagai review positif dari para pelanggan kami</p>
+            <div className='flex gap-x-8'>
                 {
                     testimonialItems.map((item, index) =>
-                        <div key={index}>
-                            <div>
-                                <div>
-                                    <img src={`images/landing/${item.image}`} alt={item.name} title={item.name}/>
-                                </div>
+                        <div key={index} className='py-10 px-8 flex gap-x-12 testimonial-item'>
+                            <div className='flex items-center w-full'>
+                                <img src={`images/landing/${item.image}`} alt={item.name} title={item.name} className='w-full'/>
                             </div>
-                            <div>
-                                <div>
-                                    <span>{stars}</span>
+                            <div className='flex flex-col gap-y-2'>
+                                <div className='flex'>
+                                    {stars}
                                 </div>
                                 <div>
-                                    <p>{item.testimonial}</p>
-                                    <span>{`${item.name} ${item.age}, ${item.address}`}</span>
+                                    <p className='font-light text-sm mb-2'>{item.testimonial}</p>
+                                    <span className='font-normal text-sm'>{`${item.name} ${item.age}, ${item.address}`}</span>
                                 </div>
                             </div>
                         </div>

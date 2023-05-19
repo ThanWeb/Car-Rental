@@ -68,3 +68,7 @@ li {
 .overview-heading {
     line-height: 54px;
 }
+
+.testimonial-item {
+    background-color: #F1F3FF;
+}

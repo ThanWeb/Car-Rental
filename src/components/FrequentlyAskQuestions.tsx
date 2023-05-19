@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react'
+import { useState } from 'react'
 
 interface Question {
     question: string
@@ -29,29 +30,41 @@ const FrequentlyAskQuestions = (): ReactElement => {
         }
     ]
 
+    const [showedQuestion, setShowedQuestion] = useState(0)
+
+    const changeShowedQuestion = (value: number): void => {
+        if (showedQuestion === value) {
+            setShowedQuestion(-1)
+        } else {
+            setShowedQuestion(value)
+        }
+    }
+
     return (
-        <div>
-            <div>
-                <h2>Frequently Asked Question</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-            <div>
-                {
-                    questions.map((item, index) =>
-                        <div key={index}>
-                            <div>
-                                <p>{item.question}</p>
-                                <button type='button'>
-                                    <img src='images/icons/chevron_down.svg' alt='More' title='More'/>
-                                    <img src='images/icons/chevron_up.svg' alt='Close' title='Close'/>
-                                </button>
+        <div className='py-24'>
+            <div className='container flex mx-auto'>
+                <div className='w-5/12'>
+                    <h2 className='text-2xl leading-9 font-bold'>Frequently Asked Question</h2>
+                    <p className='text-sm font-light mt-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+                <div className='w-7/12 flex flex-col gap-y-4'>
+                    {
+                        questions.map((item, index) =>
+                            <div key={index} className='rounded border px-6 py-4 text-sm font-light'>
+                                <div className='flex justify-between'>
+                                    <p>{item.question}</p>
+                                    <button type='button' onClick={() => { changeShowedQuestion(index) }}>
+                                        <img src='images/icons/chevron_down.svg' alt='More' title='More' className={index === showedQuestion ? 'block' : 'hidden'}/>
+                                        <img src='images/icons/chevron_up.svg' alt='Close' title='Close' className={index === showedQuestion ? 'hidden' : 'block'}/>
+                                    </button>
+                                </div>
+                                <div className={`${index === showedQuestion ? 'block' : 'hidden'} mt-4`}>
+                                    <p>{item.answer}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>{item.answer}</p>
-                            </div>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

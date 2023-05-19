@@ -32,19 +32,21 @@ const WhyUs = (): ReactElement => {
 
     return (
         <div>
-            <h2>Why Us?</h2>
-            <p>Mengapa harus pilih Binar Car Rental?</p>
-            <div>
-                {
-                    whyUsItems.map((item, index) =>
-                        <div key={index}>
-                            <img src={`images/icons/${item.image}`} alt={item.title} title={item.title}/>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                        </div>
-                    )
-                }
+            <div className='container mx-auto'>
+                <h2 className='font-bold text-2xl leading-9 mb-4'>Why Us?</h2>
+                <p className='text-sm mb-8 font-light'>Mengapa harus pilih Binar Car Rental?</p>
+                <div className='flex gap-x-6'>
+                    {
+                        whyUsItems.map((item, index) =>
+                            <div key={index} className='p-4 flex flex-col gap-y-4 border-2 rounded-lg w-1/4'>
+                                <img src={`images/icons/${item.image}`} alt={item.title} title={item.title} className='w-8'/>
+                                <h3 className='text-base font-bold'>{item.title}</h3>
+                                <p className='font-light text-sm'>{item.description}</p>
+                            </div>
+                        )
+                    }
 
+                </div>
             </div>
         </div>
     )

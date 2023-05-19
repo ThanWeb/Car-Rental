@@ -27,29 +27,31 @@ const Header = (): ReactElement => {
     ]
 
     return (
-        <header>
-            <img src='images/logo/logo.svg' alt='Binar Car Rental Logo' title='Binar Car Rental Logo'/>
-            <img src='images/icons/menu.svg' alt='Menu' title='Menu'/>
-            <div aria-label='Header Modal'>
-                <div>
+        <header className='bg-header text-sm font-normal'>
+            <div className='container mx-auto flex justify-between px-3 py-4'>
+                <img src='images/logo/logo.svg' alt='Binar Car Rental Logo' title='Binar Car Rental Logo'/>
+                <img src='images/icons/menu.svg' alt='Menu' title='Menu' className='hidden'/>
+                <div aria-label='Header Modal' className='flex items-center'>
                     <div>
-                        <span>BCR</span>
-                        <img src='images/icons/close.svg' alt='Close' title='Close'/>
+                        <div className='hidden'>
+                            <span>BCR</span>
+                            <img src='images/icons/close.svg' alt='Close' title='Close'/>
+                        </div>
+                        <nav>
+                            <ul className='flex items-center gap-x-8'>
+                                {
+                                    navItems.map((item, index) =>
+                                        <li key={index} >
+                                            <Link to={item.link}>{item.text}</Link>
+                                        </li>
+                                    )
+                                }
+                                <li>
+                                    <button type='button' className='btn-start px-3 py-2 font-bold'>Register</button>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav>
-                        <ul>
-                            {
-                                navItems.map((item, index) =>
-                                    <li key={index} >
-                                        <Link to={item.link}>{item.text}</Link>
-                                    </li>
-                                )
-                            }
-                            <li>
-                                <button type='button'>Register</button>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </header>

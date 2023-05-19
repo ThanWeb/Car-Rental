@@ -55,3 +55,16 @@ li {
     background-color: #FFFFFF;
     color: #5CB85F !important;
 }
+
+.car-bg {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    margin-right: -100%;
+    border-radius: 60px 0px 0px 0px;
+}
+
+.overview-heading {
+    line-height: 54px;
+}

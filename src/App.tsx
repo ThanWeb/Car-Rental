@@ -6,7 +6,7 @@ import NotFoundPage from './pages/NotFoundPage'
 
 const App = (): ReactElement => {
     return (
-        <div className='container'>
+        <div className='w-full overflow-hidden'>
             <main>
                 <Routes>
                     <Route path='/' element={<LandingPage />} />

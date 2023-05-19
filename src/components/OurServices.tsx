@@ -10,23 +10,25 @@ const OurServices = (): ReactElement => {
     ]
 
     return (
-        <div>
-            <div>
-                <img src='images/landing/services.svg' alt='Our Services' title='Our Services'/>
-            </div>
-            <div>
-                <h2>Best Car Rental for any kind of trip in Bali!</h2>
-                <p>Sewa mobil di Bali bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
-                <ul>
-                    {
-                        serviceItems.map((item, index) =>
-                            <li key={index}>
-                                <img src='images/icons/blue-check.svg' alt='Check'/>
-                                <span>{item}</span>
-                            </li>
-                        )
-                    }
-                </ul>
+        <div id='our-services'>
+            <div className='container flex mx-auto gap-x-24 items-center py-24'>
+                <div className='w-2/4'>
+                    <img src='images/landing/services.svg' alt='Our Services' title='Our Services' className='w-full'/>
+                </div>
+                <div className='w-2/4'>
+                    <h2 className='font-bold text-2xl leading-9'>Best Car Rental for any kind of trip in Bali!</h2>
+                    <p className='tex-sm font-light mt-6 mb-4'>Sewa mobil di Bali bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
+                    <ul className='text-sm font-light flex flex-col gap-y-4'>
+                        {
+                            serviceItems.map((item, index) =>
+                                <li key={index} className='flex gap-x-4'>
+                                    <img src='images/icons/blue-check.svg' alt='Check'/>
+                                    <span>{item}</span>
+                                </li>
+                            )
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     )

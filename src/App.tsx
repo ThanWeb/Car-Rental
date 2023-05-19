@@ -10,7 +10,7 @@ const App = (): ReactElement => {
             <main>
                 <Routes>
                     <Route path='/' element={<LandingPage />} />
-                    <Route path='/search' element={<SearchPage />} />
+                    <Route path='/cars' element={<SearchPage />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
             </main>

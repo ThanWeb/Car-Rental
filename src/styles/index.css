@@ -73,6 +73,14 @@ li {
     background-color: #F1F3FF;
 }
 
+.testimonial-btn:hover {
+    background-color: #5CB85F;
+}
+
+.testimonial-btn:hover img {
+    filter: invert(1);
+}
+
 .search-filter {
     height: 120px;
     transform: translateY(-50%);
